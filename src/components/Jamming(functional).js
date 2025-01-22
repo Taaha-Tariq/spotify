@@ -1,10 +1,10 @@
-import './Playlist.css';
-import Main from './Body';
+import './styles/Jamming(functional).module.css';
+import Jamming from './Jamming(presentation)';
 import { useState } from 'react';
-import { searchArray, notInArray, removeFromArray } from './utils';
-import { createPlaylist, getAlbum, getArtistId, getTracks, getTracks1, getTracksUri, saveTracks, tracksUri } from './authorization';
+import { searchArray, notInArray, removeFromArray } from '../utililty_functions/utils';
+import { createPlaylist, getArtistId, getAlbums, getTracksArray, saveTracks, } from '../utililty_functions/authorization';
 
-function Playlist() {
+function JamSession() {
   const [data, setData] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [search, setSearch] = useState("");
@@ -28,10 +28,10 @@ function Playlist() {
 
   function handleSave () {
     let playlist_id;
-    if (playlistName !== '' && playlist.length > 0)
+    if (playlistName !== '' && playlist.length > 0) {
       createPlaylist(playlistName)
       .then((resplay) => {
-        getTracks1(playlist).then(res => {
+        getTracksArray(playlist).then(res => {
           setAlbums(res);
           playlist_id = resplay.id
           //saveTracks( resplay.id , getTracksUri(res))
@@ -45,6 +45,7 @@ function Playlist() {
         saveTracks( playlist_id, arr );
       })
     }
+  }
 
   function handleClick2 (e) {
     setPlaylist((prev) => removeFromArray(prev, e.target.id));
@@ -58,15 +59,15 @@ function Playlist() {
       return;
     });
     if (artistId !== '')
-      getTracks(artistId).then(res => setData(res.items));
-    console.log(data);
+      getAlbums(artistId).then(res => setData(res.items));
+    
   }
   
   return (
     <div>
-      <Main result={data} playlist={playlist} handleClick1={handleClick1} handleClick2={handleClick2} handleSearch={handleSearch} search={search} handleSubmit1={handleSubmit1} playlistName={playlistName} handleSave={handleSave} handlePlaylistName={handlePlaylistName} />
+      <Jamming result={data} playlist={playlist} handleClick1={handleClick1} handleClick2={handleClick2} handleSearch={handleSearch} search={search} handleSubmit1={handleSubmit1} playlistName={playlistName} handleSave={handleSave} handlePlaylistName={handlePlaylistName} />
     </div>
   );
 }
 
-export default Playlist;
+export default JamSession;

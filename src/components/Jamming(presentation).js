@@ -1,4 +1,4 @@
-import styles from './Body.module.css';
+import styles from './styles/Jamming(presentation).module.css';
 
 const inputBar = { 
     backgroundColor:"black",
@@ -10,14 +10,14 @@ const inputBar = {
     color: 'white'
 };
 
-function Main ({ result, playlist, handleClick1, handleClick2, search, handleSearch, handleSubmit1, handleSave, handlePlaylistName, playlistName }) {
+function Jamming ({ result, playlist, handleClick1, handleClick2, search, handleSearch, handleSubmit1, handleSave, handlePlaylistName, playlistName }) {
     return (
         <div className={styles.main}>
             <h1 className={styles.title}>Jamming</h1>
             <div className={styles.maindiv}>
                 <div className={styles.searchbar}>
                     <label htmlFor="input" style={{ fontSize: "25px", marginBottom:'20px' }}>Search:</label>
-                    <input style={inputBar} type="text" id="input" placeholder='SongName' value={search} onChange={handleSearch} />
+                    <input style={inputBar} type="text" id="input" placeholder='ArtistName' value={search} onChange={handleSearch} />
                     <input className={styles.submitButton} type='submit' value="Submit" onClick={handleSubmit1} />
                 </div>
                 <div className={styles.holder}>
@@ -26,7 +26,7 @@ function Main ({ result, playlist, handleClick1, handleClick2, search, handleSea
                         <div className={styles.playlistDiv}>
                             {result.map((item) => {
                             return (
-                            <div className={styles.songs} >
+                            <div key={Math.random()} className={styles.songs} >
                                 <h6>{item.name}</h6>
                                 <p>{item.artists[0].name} | <span style={{ fontWeight: 'lighter'}}>{item.total_tracks}</span></p>
                                 <p className={styles.add} onClick={handleClick1} id={item.id}>+</p>
@@ -39,7 +39,7 @@ function Main ({ result, playlist, handleClick1, handleClick2, search, handleSea
                         <div className={styles.playlistDiv}>
                             {playlist.map((item) => {
                             return (
-                            <div className={styles.songs} >
+                            <div key={Math.random()} className={styles.songs} >
                                 <h6>{item.name}</h6>
                                 <p>{item.artists[0].name} | <span style={{ fontWeight: 'lighter'}}>{item.total_tracks}</span></p>
                                 <p className={styles.add} onClick={handleClick2} id={item.id}>-</p>
@@ -55,4 +55,4 @@ function Main ({ result, playlist, handleClick1, handleClick2, search, handleSea
     );
 }
 
-export default Main;
+export default Jamming;
