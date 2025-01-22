@@ -1,0 +1,68 @@
+.main {
+    box-sizing: border-box;
+    margin: 0;
+    height: 728px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./spotify-now-feeling-tjevlaq1eqle5tkg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inpField {
+    width: 60%;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.login {
+    border: 1px solid white;
+    width: 40%;
+    border-radius: 10px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+.submit {
+    width: 150px; 
+    background-color: black; 
+    color: rgb(2, 204, 2); 
+    border-radius: 5px;
+    border: 1px solid green; 
+}
+
+.submit:hover {
+    background-color: rgba(0, 0, 0, 0.616);
+    cursor: pointer;
+}
+
+.login a {
+    text-decoration: underline;
+}
+
+.login a:hover {
+    color: rgb(2, 204, 2);
+    cursor: pointer;
+}
+
+.login label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login input {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login div {
+    width: 80%
+}

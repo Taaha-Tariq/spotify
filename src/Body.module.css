@@ -1,0 +1,162 @@
+.main {
+    margin: 0;
+    background-image: url('./billy-huynh-W8KTS-mhFUE-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    font-family: sans-serif;
+    text-decoration: underline;
+}
+
+.maindiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.searchbar {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.submitButton {
+    background-color: black; 
+    border: 1px solid white;
+    border-radius: 4px;
+    color: rgb(151, 2, 2);
+    height: 25px;
+    width: 100px;
+}
+
+.submitButton:hover {
+    background-color: rgba(0, 0, 1, 0.707);
+    cursor: pointer;
+    color: red; 
+}
+
+.holder {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.holder div {
+    width: 300px;
+    padding: 10px;
+}
+
+/* width */
+.playlistDiv::-webkit-scrollbar {
+    width: 10px;   
+}
+  
+  /* Track */
+.playlistDiv::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 10px;
+}
+  
+/* Handle */
+.playlistDiv::-webkit-scrollbar-thumb {
+    background: white;
+}
+  
+/* Handle on hover */
+.playlistDiv::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.641);
+}
+  
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.playlistDiv {
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    background-color: black; 
+}
+
+.songs {
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid white;
+}
+
+.songs p, h6 {
+    margin: 0;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+.add {
+    font-weight: 900;
+    font-stretch: expanded;
+    position: relative;
+    left: 270px;
+    bottom: 20px;
+}
+
+.songs h6 {
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+.songs p {
+    font-size: 10px;
+}
+
+.button {
+    width: 350px;
+    margin: 50px auto 0 auto;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+    font-size: 25px;
+    border-radius: 4px;
+    color: rgb(151, 2, 2);
+}
+
+.button:hover {
+    color: red;
+    cursor: pointer;
+    background-color: rgba(0, 0, 1, 0.707);
+}
+
+.playlistName {
+    margin: 60px auto 0 auto;
+    width: 500px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
